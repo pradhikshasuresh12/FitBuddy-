@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy - AI Fitness Plan Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">Fit<span>Buddy</span></div>
+    <a class="nav-link" href="/users">Admin</a>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <p class="eyebrow">AI FITNESS PLAN GENERATOR</p>
+        <h1>Your Personal <span>Fitness Buddy</span></h1>
+        <p>
+            Enter your details and let AI create a personalized
+            workout plan, nutrition tips and fitness feedback.
+        </p>
+    </section>
+
+    <section class="form-card">
+
+        <form action="/generate" method="post">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your name" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age"
+                   min="13" max="100"
+                   placeholder="Enter your age" required>
+
+            <label for="fitness_goal">Fitness Goal</label>
+            <select id="fitness_goal" name="fitness_goal" required>
+                <option value="">Select your goal</option>
+                <option value="General Fitness">General Fitness</option>
+                <option value="Strength">Strength</option>
+                <option value="Flexibility">Flexibility</option>
+                <option value="Endurance">Endurance</option>
+                <option value="Weight Management">Weight Management</option>
+            </select>
+
+            <label for="activity_level">Activity Level</label>
+            <select id="activity_level" name="activity_level" required>
+                <option value="">Select activity level</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Active">Active</option>
+            </select>
+
+            <label for="workout_days">Workout Days per Week</label>
+            <input type="number" id="workout_days" name="workout_days"
+                   min="1" max="7" value="3" required>
+
+            <label for="workout_time">Workout Time per Session (minutes)</label>
+            <input type="number" id="workout_time" name="workout_time"
+                   min="10" max="180" value="30" required>
+
+            <label for="equipment">Available Equipment</label>
+            <input type="text" id="equipment" name="equipment"
+                   placeholder="Example: Dumbbells, Mat, None">
+
+            <button type="submit" class="primary-btn">
+                Generate My Fitness Plan ✨
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    FitBuddy • AI Powered Fitness Generator
+</footer>
+
+</body>
+</html>
