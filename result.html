@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Your Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">Fit<span>Buddy</span></div>
+    <div>
+        <a class="nav-link" href="/">New Plan</a>
+        <a class="nav-link" href="/users">Users</a>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="result-header">
+        <p class="eyebrow">YOUR AI-GENERATED PLAN</p>
+        <h1>Hello, {{ user.name }} 👋</h1>
+
+        <div class="profile-tags">
+            <span>{{ user.fitness_goal }}</span>
+            <span>{{ user.activity_level }}</span>
+            <span>{{ user.workout_days }} days/week</span>
+            <span>{{ user.workout_time }} min/session</span>
+            <span>{{ user.equipment }}</span>
+        </div>
+    </section>
+
+    <div class="notice">
+        <strong>Safety note:</strong>
+        This is educational fitness guidance, not medical advice.
+        Stop if an exercise causes pain and seek qualified professional advice when appropriate.
+    </div>
+
+    <section class="result-grid">
+
+        <article class="result-card wide">
+            <h2>🏋️ Workout Plan</h2>
+            <div class="ai-text">{{ user.workout_plan }}</div>
+        </article>
+
+        <article class="result-card">
+            <h2>🥗 Nutrition Tips</h2>
+            <div class="ai-text">{{ user.nutrition_tips }}</div>
+        </article>
+
+        <article class="result-card">
+            <h2>📈 Feedback</h2>
+            <div class="ai-text">{{ user.feedback }}</div>
+        </article>
+
+    </section>
+
+    <a class="primary-btn inline-btn" href="/">
+        Generate Another Plan
+    </a>
+
+</main>
+
+<footer>
+    FitBuddy • College AI Project
+</footer>
+
+</body>
+</html>
