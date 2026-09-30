@@ -1,1 +1,7 @@
-Flask
+fastapi
+uvicorn
+jinja2
+sqlalchemy
+python-multipart
+google-genai
+python-dotenv
